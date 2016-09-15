@@ -1,0 +1,39 @@
+{
+  "radiusClients": [
+    {
+      "name": "Firewall",
+      "addresses": [
+        "192.168.0.1"
+      ],
+      "secret": "myveryverysetredpassword",
+      "challengeCode": true,
+      "challengeCodeUserGroup": "OTPReqiredGroup",
+      "group": "AllowedGroupForAuth",
+      "attributes": [
+        [18, "Custom Attributes. Here 18 - Reply-Message"]
+      ],
+      "authAttributes": {
+        "groups": 11
+      }
+    },
+  ],
+  "radiusConfig": {
+    "timeToSaveUser": 30,
+    "timeToDelayUser": 30
+  },
+  "otp": {
+    "defaultOtpRealm": "Name of OTP Code",
+    "qrCodePath": "./pathForQrCodesImages/",
+    "userFile": "./user.json"
+  },
+  "authServer": {
+    "standardPrefix": false,
+    "standardSuffix": "@mydomain.loacl",
+    "ldap": {
+      "url": "ldap://192.168.0.10",
+      "baseDN": "dc=mydomain,dc=local",
+      "username": "ldapquery@mydomain.local",
+      "password": "ldapquery"
+    }
+  }
+}
