@@ -1,0 +1,4 @@
+radius:
+  build: .
+  ports:
+    - "1812:1812/udp"
